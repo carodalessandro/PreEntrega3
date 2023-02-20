@@ -11,18 +11,14 @@ class Mercaderia {
     this.cantidad++;
   }
 
-  quitarUnidad() {
-    this.cantidad--;
-  }
-
   actualizarPrecioTotal() {
     this.precioTotal = this.precio * this.cantidad;
   }
 }
 
 function imprimirProductosEnHTML(array) {
-  let contenedor = document.getElementById("contenedor");
-  contenedor.innerHTML = "";
+  let contenedorCard = document.getElementById("contenedorCard");
+  contenedorCard.innerHTML = "";
 
   for (const mercaderia of array) {
     let card = document.createElement("div");
@@ -40,7 +36,7 @@ function imprimirProductosEnHTML(array) {
             </div>
         </div>
         `;
-    contenedor.appendChild(card);
+    contenedorCard.appendChild(card);
 
     let boton = document.getElementById(
       `agregar${mercaderia.tipo}${mercaderia.id}`
@@ -145,10 +141,15 @@ function limpiarCarrito() {
               Eliminar Carrito 
               </button>`;
 
+
   eliminar.onclick = () => {
-    localStorage.clear(), array.splice(0, array.length);
+    carrito = [];
+    localStorage.clear(), 
+    document.getElementById("tablaCarrito").innerHTML = "",
+    document.getElementById("accionesCarrito").innerHTML = "";
+  }
   };
-}
+
 limpiarCarrito();
 
 const productos = [
