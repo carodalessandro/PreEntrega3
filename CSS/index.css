@@ -1,0 +1,40 @@
+.contenedor {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1370px;
+  position: relative;
+}
+
+.logo {
+  height: 7rem;
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+}
+nav {
+  background-color: black;
+}
+
+.title {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: x-large;
+}
+
+.boton {
+  background-color: fuchsia;
+  border-color: fuchsia;
+}
+
+.marginPedidos {
+  margin: 1rem 5rem 1rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgSize {
+  height: 15rem;
+}
