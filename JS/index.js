@@ -146,7 +146,7 @@ function limpiarCarrito() {
               </button>`;
 
   eliminar.onclick = () => {
-    localStorage.clear(), array.splice(0, array.length);
+    localStorage.clear();
   };
 }
 limpiarCarrito();
