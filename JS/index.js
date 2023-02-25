@@ -56,10 +56,21 @@ function agregarAlCarrito(producto) {
   if (index != -1) {
     carrito[index].agregarUnidad();
     carrito[index].actualizarPrecioTotal();
+    Toastify({
+      text: "Agregaste otra unidad de este producto",
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+    }).showToast();
   } else {
     let mercaderia = new Mercaderia(producto);
     mercaderia.cantidad = 1;
     carrito.push(mercaderia);
+    swal({
+      text: "El producto fue agregado con éxito",
+      icon: "success",
+    });
   }
 
   localStorage.setItem("carritoEnStorage", JSON.stringify(carrito));
@@ -146,7 +157,14 @@ function limpiarCarrito() {
               </button>`;
 
   eliminar.onclick = () => {
-    localStorage.clear();
+    carrito = [];
+    localStorage.clear(),
+      (document.getElementById("tablaCarrito").innerHTML = ""),
+      (document.getElementById("accionesCarrito").innerHTML = "");
+    swal({
+      text: "Su carrito fue eliminado con éxito",
+      icon: "success",
+    });
   };
 }
 limpiarCarrito();
