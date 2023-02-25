@@ -152,7 +152,6 @@ function limpiarCarrito() {
               Eliminar Carrito 
               </button>`;
 
-
   eliminar.onclick = () => {
     carrito = [];
     localStorage.clear(),
@@ -163,7 +162,7 @@ function limpiarCarrito() {
       icon: "success",
     });
   };
-
+}
 limpiarCarrito();
 
 const productos = [
